@@ -1,0 +1,24 @@
+{
+  "name": "mern-passport-google-oauth20",
+  "version": "1.0.0",
+  "description": "MERN Stack Google Login",
+  "main": "index.js",
+  "scripts": {
+    "clientdev": "cd client && npm start",
+    "serverdev": "cd server && npm run dev",
+    "dev": "concurrently \"npm run clientdev\" \"npm run serverdev\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alimr70/mern-passport-google-oauth20.git"
+  },
+  "author": "Ali Maher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alimr70/mern-passport-google-oauth20/issues"
+  },
+  "homepage": "https://github.com/alimr70/mern-passport-google-oauth20#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

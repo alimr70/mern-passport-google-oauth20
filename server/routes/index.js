@@ -11,7 +11,7 @@ Router.get("/", ensureLoggedin, (req, res) => {
 // @desc    Login success route
 // @route   POST /loginsuccess
 Router.get("/loginsuccess", ensureAuth, (req, res) => {
-  res.json("Login Success My Friend");
+  res.json({ isAuthenticated: true, user: {} });
 });
 
 module.exports = Router;
