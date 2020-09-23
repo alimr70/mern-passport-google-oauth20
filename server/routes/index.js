@@ -11,7 +11,8 @@ Router.get("/", ensureLoggedin, (req, res) => {
 // @desc    Login success route
 // @route   POST /loginsuccess
 Router.get("/loginsuccess", ensureAuth, (req, res) => {
-  res.json({ isAuthenticated: true, user: {} });
+  const { displayName, image, email } = req.user;
+  res.json({ isAuthenticated: true, user: { displayName, image, email } });
 });
 
 module.exports = Router;

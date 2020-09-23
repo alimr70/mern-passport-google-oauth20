@@ -4,7 +4,10 @@ const Router = express.Router();
 
 // @desc    Auth with google
 // @route   GET /auth/google
-Router.get("/google", passport.authenticate("google", { scope: ["profile"] }));
+Router.get(
+  "/google",
+  passport.authenticate("google", { scope: ["profile", "email"] })
+);
 
 // @desc    Google auth callback
 // @route   GET /auth/google/callback
@@ -20,7 +23,7 @@ Router.get(
 // @route   /auth/logout
 Router.get("/logout", (req, res) => {
   req.logOut();
-  res.redirect("/");
+  res.redirect("/api");
 });
 
 module.exports = Router;
