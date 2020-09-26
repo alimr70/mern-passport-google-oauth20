@@ -3,12 +3,12 @@ module.exports = {
     if (req.isAuthenticated()) {
       return next();
     } else {
-      res.redirect("/api");
+      res.json({ isAuthenticated: false, user: {} });
     }
   },
   ensureLoggedin: (req, res, next) => {
     if (req.isAuthenticated()) {
-      res.redirect("/api/loginsuccess");
+      res.redirect(`${process.env.CLIENT_URL}`);
     } else {
       return next();
     }

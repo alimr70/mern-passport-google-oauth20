@@ -14,7 +14,7 @@ const AuthContextProvider = (props) => {
     async () => {
       const req = await axios({
         method: "GET",
-        url: "/api",
+        url: "/auth/getCurrentUser",
       });
 
       const res = req.data;
@@ -29,18 +29,27 @@ const AuthContextProvider = (props) => {
     }
   );
 
-  const getData = async () => {
+  const getCurrentUser = async () => {
     const req = await axios({
       method: "GET",
-      url: "/api",
+      url: "/auth/getCurrentUser",
     });
-
     const res = req.data;
-    authDispatch({ type: "GET_USER", data: res });
+    authDispatch({ type: "SET_CURRENT_USER", data: res });
+  };
+
+  const logout = async () => {
+    const req = await axios({
+      method: "GET",
+      url: "/auth/logout",
+    });
+    const res = req.data;
+    authDispatch({ type: "SET_CURRENT_USER", data: res });
   };
 
   return (
-    <AuthContext.Provider value={{ authState, authDispatch, getData }}>
+    <AuthContext.Provider
+      value={{ authState, authDispatch, getCurrentUser, logout }}>
       {props.children}
     </AuthContext.Provider>
   );

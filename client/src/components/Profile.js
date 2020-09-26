@@ -1,26 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
+import { Redirect } from "react-router-dom";
 import Logout from "./Logout";
 
-const api = process.env.REACT_APP_API_URL;
-
-const LandingPage = () => {
+const Profile = () => {
   const { authState } = useContext(AuthContext);
 
   return (
     <React.Fragment>
-      <h1>Landing Page</h1>
+      <h1>Profile</h1>
       {!authState.isAuthenticated ? (
-        <a href={api + "/auth/google"}>
-          <button>Login with google</button>
-        </a>
+        <Redirect to="/" />
       ) : (
         <React.Fragment>
+          <img src={authState.user.image} alt="Profile" />
           <h3>Welcom {authState.user.displayName}</h3>
-          <Link to="/profile">
-            <button>View Your Profile</button>
-          </Link>
+          <h3>Your E-Mail: {authState.user.email}</h3>
           <Logout />
         </React.Fragment>
       )}
@@ -28,4 +23,4 @@ const LandingPage = () => {
   );
 };
 
-export default LandingPage;
+export default Profile;
