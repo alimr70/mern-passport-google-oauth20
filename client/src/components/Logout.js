@@ -4,12 +4,13 @@ import { AuthContext } from "../context/AuthContext";
 const Logout = () => {
   const { logout } = useContext(AuthContext);
   return (
-    <button
+    <div
+      className="google-btn"
       onClick={() => {
         logout();
       }}>
-      Logout
-    </button>
+      <p>Logout</p>
+    </div>
   );
 };
 

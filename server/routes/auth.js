@@ -30,8 +30,11 @@ Router.get("/logout", (req, res) => {
 // @desc    Get current user data
 // @route   GET /getCurrentUser
 Router.get("/getCurrentUser", ensureAuth, (req, res) => {
-  const { displayName, image, email } = req.user;
-  res.json({ isAuthenticated: true, user: { displayName, image, email } });
+  const { firstName, displayName, image, email } = req.user;
+  res.json({
+    isAuthenticated: true,
+    user: { firstName, displayName, image, email },
+  });
 });
 
 module.exports = Router;

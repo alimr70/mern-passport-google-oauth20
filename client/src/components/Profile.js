@@ -13,7 +13,11 @@ const Profile = () => {
         <Redirect to="/" />
       ) : (
         <React.Fragment>
-          <img src={authState.user.image} alt="Profile" />
+          <img
+            className="profile-pic"
+            src={authState.user.image}
+            alt="Profile"
+          />
           <h3>Welcom {authState.user.displayName}</h3>
           <h3>Your E-Mail: {authState.user.email}</h3>
           <Logout />
