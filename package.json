@@ -13,7 +13,7 @@
     "url": "git+https://github.com/alimr70/mern-passport-google-oauth20.git"
   },
   "author": "Ali Maher",
-  "license": "ISC",
+  "license": "Unlicense",
   "bugs": {
     "url": "https://github.com/alimr70/mern-passport-google-oauth20/issues"
   },
