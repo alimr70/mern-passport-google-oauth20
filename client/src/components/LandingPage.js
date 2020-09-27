@@ -4,6 +4,12 @@ import { AuthContext } from "../context/AuthContext";
 import Logout from "./Logout";
 
 const api = process.env.REACT_APP_API_URL;
+console.log(window.location.href);
+const loginLink =
+  window.location.href === "http://localhost:3000/"
+    ? api + "/auth/google"
+    : "auth/google";
+console.log(loginLink);
 
 const LandingPage = () => {
   const { authState } = useContext(AuthContext);
@@ -12,7 +18,7 @@ const LandingPage = () => {
     <React.Fragment>
       <h1>Landing Page</h1>
       {!authState.isAuthenticated ? (
-        <a href={"/auth/google"} className="google-btn">
+        <a href={loginLink} className="google-btn">
           <img src="./img/btn_google_dark_normal_ios.svg" alt="google btn" />
           <p>Sign in with Google</p>
         </a>
