@@ -4,12 +4,11 @@
   "description": "MERN Stack Google Login",
   "main": "index.js",
   "scripts": {
+    "start": "node server/app.js",
     "clientdev": "cd client && npm start",
     "serverdev": "cd server && npm run dev",
-    "clientbuild": "npm build --prefix client",
-    "serverbuild": "npm start --prefix server",
     "dev": "concurrently \"npm run clientdev\" \"npm run serverdev\" ",
-    "build": "concurrently \"npm run clientbuild\" \"npm run serverbuild\" "
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
