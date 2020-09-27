@@ -4,12 +4,10 @@ import { AuthContext } from "../context/AuthContext";
 import Logout from "./Logout";
 
 const api = process.env.REACT_APP_API_URL;
-console.log(window.location.href);
 const loginLink =
   window.location.href === "http://localhost:3000/"
     ? api + "/auth/google"
     : "auth/google";
-console.log(loginLink);
 
 const LandingPage = () => {
   const { authState } = useContext(AuthContext);
