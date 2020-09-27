@@ -31,9 +31,7 @@ Don't store your client secret in your React app. You should store client secret
 
 ### 3. Client Side Setup
 
-1. execute these commands
-
-In the root of the client create a new file and name it ".env.local"
+1. In the root of the client create a new file and name it ".env.local"
 
 2. open `.env.local` file add
 
