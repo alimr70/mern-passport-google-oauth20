@@ -12,7 +12,7 @@ const LandingPage = () => {
     <React.Fragment>
       <h1>Landing Page</h1>
       {!authState.isAuthenticated ? (
-        <a href={api + "/auth/google"} className="google-btn">
+        <a href={"/auth/google"} className="google-btn">
           <img src="./img/btn_google_dark_normal_ios.svg" alt="google btn" />
           <p>Sign in with Google</p>
         </a>
